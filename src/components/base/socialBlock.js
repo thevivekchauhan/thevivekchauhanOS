@@ -31,7 +31,7 @@ function SocialBlock() {
 						className="uk-img uk-margin-small-right uk-link"
 						uk-tooltip="GitHub"
 						onClick={() =>
-							onSocialClick("https://github.com/" + user.gitHub)
+							onSocialClick("https://github.com/thevivekchauhan" + user.gitHub)
 						}
 					/>
 				)}

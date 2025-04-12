@@ -5,19 +5,19 @@ import Freelance from ".././../assets/images/data/Freelance.png";
 import PayPal from ".././../assets/images/data/PayPal.jpeg";
 
 const user = {
-	firstName: "Srinibas",
-	lastName: "Biswal",
+	firstName: "Vivek",
+	lastName: "Chauhan",
 	userImage: default_avatar,
 	resume: ResumePDF,
-	email: "srinibasbiswal02@gmail.com",
-	linkedIn: "in/srinibasbiswal",
-	gitHub: "srinibasbiswal",
-	twitter: "srinibasbiswal",
+	email: "thechauhanvivek@gmail.com",
+	linkedIn: "in/thevivekchauhan",
+	gitHub: "thevivekchauhan",
+	twitter: "vivekchauhan005",
 	aboutMe: {
-		intro: " I'm a Full Stack Software Development Engineer from India.",
+		intro: " I'm a Front-end Developer from India.",
 		description:
-			"I enjoy taking up complex problems and converting to an usable format. My major domains are Web Development (React / Angular / Node) and Software Development (Java / Python).",
-		outro: "When I'm not developing any stuff , you will find me re-watching an episode of The Office or exploring a new place.",
+			"I am a highly motivated and hardworking individual seeking a challenging role in a reputable organization where I can apply my skills and continue to grow. Although I am new to ReactJS, I have a strong foundation of knowledge and expertise in web development, and I am confident in my ability to learn quickly and adapt to new technologies.",
+		outro: "My goal is to leverage my expertise in front-end development, video editing, and storytelling as a travel vlogger to create impactful experiences and drive innovation.",
 	},
 	experiences: [
 		{
