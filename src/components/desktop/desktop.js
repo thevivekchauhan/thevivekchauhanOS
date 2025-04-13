@@ -12,6 +12,7 @@ import Loading from "../loading/loading";
 
 function Desktop() {
 	const appState = useSelector((state) => state.appState);
+	const current_settings = useSelector((state) => state.settingsState);
 	const [desktopApps, setDesktopApps] = useState([]);
 	const [onDesktopApps, setonDesktopApps] = useState([]);
 	const [onTaskbarApps, setonTaskBarApps] = useState([]);
@@ -52,26 +53,36 @@ function Desktop() {
 		desktopApps.length > 0
 	) {
 		return (
-			<div className="screenHeight uk-flex uk-flex-column">
-				<div className="desktop-container">
-					<ActionCenter />
-					<StartMenu />
-					<CalendarOverlay />
-					<div className="app-playground uk-position-right">
-						<div className="uk-position-left uk-flex uk-flex-column">
-							{desktopApps.map((app, index) => {
-								return <AppIcon appInfo={app} key={index} />;
-							})}
+				<div 
+					style={{
+						backgroundImage: `url(${current_settings.currentWallpaper})`,
+						backgroundSize: 'cover',
+						backgroundPosition: 'center',
+						height: '100vh',
+						width: '100vw'
+					}}
+				>
+					<div className="screenHeight uk-flex uk-flex-column">
+						<div className="desktop-container">
+							<ActionCenter />
+							<StartMenu />
+							<CalendarOverlay />
+							<div className="app-playground uk-position-right">
+								<div className="uk-position-left uk-flex uk-flex-column">
+									{desktopApps.map((app, index) => {
+										return <AppIcon appInfo={app} key={index} />;
+									})}
+								</div>
+								{onDesktopApps.map((app, index) => {
+									return <AppComponent appInfo={app} key={index} />;
+								})}
+							</div>
 						</div>
-						{onDesktopApps.map((app, index) => {
-							return <AppComponent appInfo={app} key={index} />;
-						})}
+						<div className="taskbar uk-position-bottom">
+							<Taskbar onTaskbarApps={onTaskbarApps} />
+						</div>
 					</div>
 				</div>
-				<div className="taskbar uk-position-bottom">
-					<Taskbar onTaskbarApps={onTaskbarApps} />
-				</div>
-			</div>
 		);
 	} else {
 		return <Loading />;
