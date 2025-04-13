@@ -15,7 +15,7 @@ function BackgroundSettings() {
 
     return (
         <div className="settings-container background-dark">
-            <p className="uk-text-lead text-white">Change Desktop Background:</p>
+            <p style={{ color: "white" }} className="uk-text-lead text-white">Change Desktop Background:</p>
             <div className="uk-child-width-1-2@m wallpaper-grid" uk-grid={"true"}>
                 {settings.desktop_wallpapers.map((wallpaper, index) => (
                     <div key={wallpaper.id}>
