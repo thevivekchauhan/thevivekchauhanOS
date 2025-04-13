@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import scanCode from "../assets/images/baseImages/scanCode.png";
+// import scanCode from "../assets/images/baseImages/scanCode.png";
 
 function BlueScreen404() {
 	return (
@@ -19,7 +19,7 @@ function BlueScreen404() {
 				<div className="uk-flex">
 					<div className="uk-card uk-card-body">
 						<img
-							src={scanCode}
+							// src={scanCode}
 							width="150"
 							height="150"
 							alt="QR Code"
