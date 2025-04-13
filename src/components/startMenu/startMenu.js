@@ -9,8 +9,6 @@ import { handleApplicationClick } from "../../utils/actions/app.action";
 import user from "../../utils/data/user.config";
 import SocialBlock from "../base/socialBlock";
 import AppIcon from "../base/appIcon";
-import firebase from "../../utils/firebaseConfig";
-import { ANALYTICS_EVENTS } from "../../utils/documents/enums";
 import projectConfig from "../../utils/data/project.config";
 
 function StartMenu() {
@@ -24,11 +22,6 @@ function StartMenu() {
 		dispatch(handleApplicationClick(app));
 	};
 	const setNextSystemState = (systemState) => {
-		if (projectConfig.enableAnalytics) {
-			firebase.analytics().logEvent(ANALYTICS_EVENTS.CHANGE_POWER_STATE, {
-				changedTo: systemState,
-			});
-		}
 		dispatch(setSystemState(systemState));
 	};
 
@@ -41,27 +34,19 @@ function StartMenu() {
 				key: "lock",
 				iconProps: { iconName: "Lock" },
 				text: "Lock",
-				onClick: () => setNextSystemState("isLocked"),
+				onClick: () => dispatch(setSystemState("isLocked"))
 			},
 			{
 				key: "shutDown",
 				iconProps: { iconName: "PowerButton" },
 				text: "Shut Down",
-				onClick: () => setNextSystemState("isShutDown"),
+				onClick: () => dispatch(setSystemState("isShutDown"))
 			},
 			{
 				key: "admin",
 				iconProps: { iconName: "Admin" },
 				text: "Admin",
-				onClick: () => {
-					if (projectConfig.enableAnalytics) {
-						firebase.analytics().logEvent(ANALYTICS_EVENTS.ADMIN);
-					}
-					window.open(
-						"https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO",
-						"_blank"
-					);
-				},
+				onClick: () => window.open("https://www.youtube.com/@theVivekChauhan", "_blank")
 			},
 		],
 	});
