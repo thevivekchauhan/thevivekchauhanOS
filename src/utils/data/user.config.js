@@ -1,4 +1,4 @@
-import ResumePDF from "./Srinibas_Biswal_Resume.pdf";
+import ResumePDF from "./Vivek-Resume.pdf";
 import default_avatar from "../../assets/images/baseImages/default_avatar.svg";
 import KloudGin from ".././../assets/images/data/KloudGin.png";
 import Freelance from ".././../assets/images/data/Freelance.png";
