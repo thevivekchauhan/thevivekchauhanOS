@@ -2,7 +2,7 @@
   <br>
 
   <br>
-  Portfolio OS Theme - Windows
+  Portfolio OS Theme - Windows.
   <br>
 </h1>
 
